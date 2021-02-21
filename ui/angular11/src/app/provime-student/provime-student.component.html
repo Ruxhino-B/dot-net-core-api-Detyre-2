@@ -1,1 +1,15 @@
 <p>provime-student works!</p>
+<h2>{{name}}</h2>
+<h2>{{getLastName()}}</h2>
+
+
+<label class="col-sm-2 col-form-label" for="">Emer_Mbiemer</label>
+<div class="col-sm-10">
+    <select class="form-control" [(ngModel)]="Pedagog">
+    <option>--Select--</option>
+    <option *ngFor="let emr of Pedagog">
+        {{emr.Emer}} {{emr.Mbiemer}}
+    </option>
+</select>
+</div>
+<h1>{{returnEmer()}}</h1>

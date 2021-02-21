@@ -55,7 +55,7 @@ namespace OrariWebApi.Controllers
         public JsonResult GetOnlyPetagog()
         {
             string query = @"
-                    select Emer+' '+Mbiemer as Petagog from Orari";
+                    select Emer, Mbiemer from Orari group by Emer,Mbiemer";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("OrariAppCon");
             SqlDataReader myReader;

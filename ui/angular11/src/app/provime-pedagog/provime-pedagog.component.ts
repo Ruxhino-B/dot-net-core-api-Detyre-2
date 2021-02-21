@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {SharedService} from 'src/app/shared.service';
 
 @Component({
   selector: 'app-provime-pedagog',
@@ -7,9 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProvimePedagogComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service:SharedService) { }
+
+  @Input() ped:any;
+ 
+
+  Pedagog:any=[];
+  Emer:string="";
+  Mbiemer:string="";
+ 
+  
 
   ngOnInit(): void {
+    this.loaListPedagog();
+  }
+
+  loaListPedagog(){
+    this.service.getOnlyPedagog().subscribe(data=>{
+        this.Pedagog=data;
+
+        this.Emer=this.ped.Pedagog;
+        this.Mbiemer=this.ped.pedagog
+      });
   }
 
 }

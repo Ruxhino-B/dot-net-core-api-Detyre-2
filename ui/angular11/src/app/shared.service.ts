@@ -14,8 +14,8 @@ export class SharedService {
     return this.http.get<any>(this.APIUrl+'/orari');
   }
 
-  getProvimePedagog():Observable<any[]>{
-    return this.http.get<any>(this.APIUrl+'/ProvimePedagog');
+  getProvimePedagog(val:any):Observable<any[]>{
+    return this.http.get<any[]>(this.APIUrl+'/ProvimePedagog');
   }
 
   getProvimeStudent():Observable<any[]>{
@@ -38,13 +38,15 @@ export class SharedService {
     return this.http.get<any[]>(this.APIUrl+'/orari/GetOnlyDita');
   }
 
-  getOnlyPetagog():Observable<any[]>{
+  getOnlyPedagog():Observable<any[]>{
     return this.http.get<any[]>(this.APIUrl+'/ProvimePedagog/GetOnlyPetagog');
   }
 
   getOnlyDega():Observable<any[]>{
     return this.http.get<any[]>(this.APIUrl+'/orari/Dega')
   }
+
+  
 
 
 }
