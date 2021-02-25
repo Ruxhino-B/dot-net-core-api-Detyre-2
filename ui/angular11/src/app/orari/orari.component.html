@@ -1,15 +1,41 @@
+<select [(ngModel)]="SelectedKlasa" (change)="FilterFn()">
+    <option *ngFor="let klas of Klasa" [ngValue]="klas">
+        {{klas.KlasaNew}}
+    </option>
+</select>
+{{SelectedKlasa.id}}
 
+<select [(ngModel)]="SelectedData" (change)="FilterFn()">
+    <option *ngFor="let dat of Data" [ngValue]="dat">
+        {{dat.Dita}}
+    </option>
+</select>
+{{SelectedData.id}}
 
-<table class="table table-striped">
+<table>
     <thead>
-        <tr>
-            <th>Klasa</th>
-        </tr>
+        
+        <th>Ora</th>
+        <th>Dega</th>
+        <th>Lenda</th>
+        <th>VitiLenda</th>
+        <th>VitiStudent</th>
+        <th>Paraleli</th>
+        <th>Petagog</th>
+        <th>Nr Studetesh</th>
     </thead>
     <tbody>
-        <tr *ngFor="let dataItem of KlasaList">
-            <td>{{dataItem.Klasa}}</td>
+        <tr *ngFor="let ore of Orari">
+            
+            <td>{{ore.Ora}}</td>
+            <td>{{ore.Dega}}</td>
+            <td>{{ore.Lenda}}</td>
+            <td>{{ore.VitiLenda}}</td>
+            <td>{{ore.VitiStudent}}</td>
+            <td>{{ore.Paraleli}}</td>
+            <td>{{ore.Petagog}}</td>
+            <td>{{ore.NrStudent}}</td>
+
         </tr>
     </tbody>
 </table>
-

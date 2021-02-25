@@ -9,30 +9,13 @@ import { SharedService } from 'src/app/shared.service'
 export class ProvimeStudentComponent implements OnInit {
 
   constructor(private service:SharedService) { }
-  @Input() eme:any;
-  Pedagog:any=[];
-  Emer:string | undefined;
-  Mbiemer:string="";
-
+  
+  
+ 
+ 
   ngOnInit(): void {
-    this.getEmerMbiemer();
-  }
-  name="Ruxhino"
-
-  getLastName(){
-    return "Balliu"
+    
   }
 
-  getEmerMbiemer(){
-    this.service.getOnlyPedagog().subscribe(data=>{
-      this.Pedagog=data;
-      this.Emer=this.Pedagog.Emer;
-      this.Mbiemer=this.Pedagog.Mbiemer;
-    });
-  }
-
-  returnEmer(){
-    return this.Emer;
-  }
-
+ 
 }

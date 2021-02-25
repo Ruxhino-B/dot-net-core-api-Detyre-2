@@ -1,13 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
-using System.Data.SqlClient;
-using System.Data;
 using OrariWebApi.Models;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace OrariWebApi.Controllers
 {
@@ -23,16 +18,16 @@ namespace OrariWebApi.Controllers
 
         }
         [HttpGet]
-        public JsonResult Get(Orari ora)
+        public JsonResult Get()
         {
             string query = @"
-                    select d.Dita,ore.Ora,Dega,Lenda,VitiLenda,VitiStudent,Paraleli,
+                    select Emer+' '+Mbiemer as Emer_Mbiemer, d.Dita,ore.Ora,Dega,Lenda,VitiLenda,VitiStudent,Paraleli,
                         k.Klasa,k2.Klasa from Orari o
                         inner join dbo.Ditet d on d.Id=o.Dita
                         inner join dbo.Oret ore on ore.Id=o.Ora
                         inner join dbo.Klasat k on k.Id=o.Klasa1
                         inner join dbo.Klasat k2 on k2.Id=o.Klasa2
-                        where Emer='" + ora.Emer + @"' and Mbiemer='" + ora.Mbiemer + @"'
+                        
                         order by Dita,Ora,Lenda,Dega,VitiLenda,VitiStudent,Paraleli";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("OrariAppCon");
@@ -55,7 +50,7 @@ namespace OrariWebApi.Controllers
         public JsonResult GetOnlyPetagog()
         {
             string query = @"
-                    select Emer, Mbiemer from Orari group by Emer,Mbiemer";
+                    select Emer+' '+Mbiemer as Emer_Mbiemer from Orari group by Emer,Mbiemer";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("OrariAppCon");
             SqlDataReader myReader;

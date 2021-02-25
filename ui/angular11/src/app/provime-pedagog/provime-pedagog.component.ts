@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Pipe, PipeTransform,Query,QueryList } from '@angular/core';
 import {SharedService} from 'src/app/shared.service';
 
 @Component({
@@ -9,26 +9,44 @@ import {SharedService} from 'src/app/shared.service';
 export class ProvimePedagogComponent implements OnInit {
 
   constructor(private service:SharedService) { }
-
-  @Input() ped:any;
  
-
-  Pedagog:any=[];
-  Emer:string="";
-  Mbiemer:string="";
+  PedagogList:any=[];
+  EmerPetagog:any=[];
+  EmerSelektuar:any=[];
+  PedagogListWithoutFilter:any=[];
  
-  
+  // Mbiemer:string="";
 
   ngOnInit(): void {
-    this.loaListPedagog();
+    this.loadListPedagog();
+    this.FilterFn();
+    this.loadEmerPetagog();
+    
+    
+    
   }
 
-  loaListPedagog(){
+  loadEmerPetagog(){
     this.service.getOnlyPedagog().subscribe(data=>{
-        this.Pedagog=data;
+      console.log(data);
+      this.EmerPetagog=data;
+      this.EmerSelektuar=this.EmerPetagog[9];
+      
+    });
+  }
 
-        this.Emer=this.ped.Pedagog;
-        this.Mbiemer=this.ped.pedagog
+  loadListPedagog(){
+    this.service.getProvimePedagog().subscribe(data=>{
+      console.log(data);
+        this.PedagogList=data;
+        this.PedagogListWithoutFilter=data;
+      });
+  }
+  FilterFn(){
+    var EmerSelektuar = this.EmerSelektuar.Emer_Mbiemer;
+    this.PedagogList = this.PedagogListWithoutFilter.filter(function (el:any){
+        return el.Emer_Mbiemer.toString().toLowerCase().includes(
+         EmerSelektuar.toString().toLowerCase()  )
       });
   }
 

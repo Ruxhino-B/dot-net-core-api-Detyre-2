@@ -1,4 +1,39 @@
-<h2>Hi. I am Ruxhino</h2>
+<select [(ngModel)]="EmerSelektuar" (change)="FilterFn()">
+    <option *ngFor="let emer of EmerPetagog" [ngValue]="emer">
+        {{emer.Emer_Mbiemer}}
+    </option>
+</select>
+{{EmerSelektuar.Emer_Mbiemer}}
+
+<table>
+    <thead>
+        
+        <th>Dita</th>
+        <th>Ora</th>
+        <th>Dega</th>
+        <th>Lenda</th>
+        <th>VitiLenda</th>
+        <th>VitiStudent</th>
+        <th>Paraleli</th>
+        <th>Klasa</th>
+        <th>Klasa1</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let prof of PedagogList">
+            
+            <td>{{prof.Dita}}</td>
+            <td>{{prof.Ora}}</td>
+            <td>{{prof.Dega}}</td>
+            <td>{{prof.Lenda}}</td>
+            <td>{{prof.VitiLenda}}</td>
+            <td>{{prof.VitiStudent}}</td>
+            <td>{{prof.Paraleli}}</td>
+            <td>{{prof.Klasa}}</td>
+            <td>{{prof.Klasa1}}</td>
+
+        </tr>
+    </tbody>
+</table>
 
 
     

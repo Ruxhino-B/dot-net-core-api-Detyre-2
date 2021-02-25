@@ -22,16 +22,17 @@ namespace OrariWebApi.Controllers
 
         }
         [HttpGet]
-        public JsonResult Get(Orari ora)
+        /*public JsonResult Get(Orari ora)*/
+        public JsonResult Get()
         {
             string query = @"
-                    select ore.Ora, Dega,Lenda,VitiLenda,o.VitiStudent,
-                    o.Paraleli,LOWER(Emer)+'.'+LOWER(Mbiemer)+'@fshn.edu.al' as Petagog
+                    select ore.Ora, o.Dita, Klasa1, Klasa2, Dega,Lenda,VitiLenda,o.VitiStudent,
+                    o.Paraleli,LOWER(Emer)+'.'+LOWER(Mbiemer)+'@fshn.edu.al' as Petagog, NrStudent
                       from Orari o
                       inner join Oret ore on o.Ora=ore.Id
-                      inner join Ditet d on o.Dita=d.Id
-                      where o.Klasa1 = '" + ora.Klasa1 + @"'
-                            and o.Dita = '" + ora.Dita + @"'";
+                      inner join Ditet d on o.Dita=d.Id";
+            //where o.Klasa1 = '" + ora.Klasa1 + @"'
+            //   and o.Dita = '" + ora.Dita + @"'
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("OrariAppCon");
             SqlDataReader myReader;
@@ -79,7 +80,7 @@ values
         public JsonResult GetOnlyKlasa()
         {
             string query = @"
-                    select Klasa from Klasat";
+                    select id, KlasaNew from Klasat group by id,KlasaNew";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("OrariAppCon");
             SqlDataReader myReader;
@@ -101,7 +102,7 @@ values
         public JsonResult GetOnlyDita()
         {
             string query = @"
-                    select Dita from Ditet group by Dita";
+                    select id,Dita from Ditet group by id,Dita;";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("OrariAppCon");
             SqlDataReader myReader;
