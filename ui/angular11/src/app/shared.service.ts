@@ -42,13 +42,29 @@ export class SharedService {
     return this.http.get<any[]>(this.APIUrl+'/ProvimePedagog/GetOnlyPetagog');
   }
 
-  getOnlyDega():Observable<any[]>{
-    return this.http.get<any[]>(this.APIUrl+'/orari/Dega')
+  getDegaImport():Observable<any[]>{
+    return this.http.get<any[]>(this.APIUrl+'/orari/Dega');
   }
 
-  
+  getVitiStudent():Observable<any[]>{
+    return this.http.get<any[]>(this.APIUrl+'/ProvimeStudent/VitiStudent');
+  }
 
-  
+  getParaleli():Observable<any[]>{
+    return this.http.get<any[]>(this.APIUrl+'/ProvimeStudent/Paraleli');
+  }
+
+  getDega():Observable<any[]>{
+    return this.http.get<any[]>(this.APIUrl+'/ProvimeStudent/dega');
+  }
+
+  getVitiLenda():Observable<any[]>{
+    return this.http.get<any[]>(this.APIUrl+'/orari/VitiLenda');
+  }
+
+  getLenda():Observable<any[]>{
+    return this.http.get<any[]>(this.APIUrl+'/orari/Lenda');
+  }
 
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SharedService} from 'src/app/shared.service';
 
 @Component({
   selector: 'app-update-disponibel',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpdateDisponibelComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service:SharedService) { }
+
 
   ngOnInit(): void {
   }

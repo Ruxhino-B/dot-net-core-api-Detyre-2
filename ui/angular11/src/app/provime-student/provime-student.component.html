@@ -1,1 +1,51 @@
-<h1>THis is student page</h1>
+<select [(ngModel)]="SelectedDega" (change)="FilterDe()">
+    <option *ngFor="let deg of Dega" [ngValue]="deg">
+        {{deg.Dega}}
+    </option>
+</select>
+{{SelectedDega.Dega}}
+
+<select [(ngModel)]="SelectedViti" (change)="FilterVi()" >
+    <option *ngFor="let vit of Viti" [ngValue]="vit">
+        {{vit.VitiStudent}}
+    </option>
+</select>
+{{SelectedViti.VitiStudent}}
+
+<select [(ngModel)]="SelectedParaleli" (change)="FilterPa()">
+    <option *ngFor="let paralel of Paraleli" [ngValue]="paralel">
+        {{paralel.Paraleli}}
+    </option>
+</select>
+{{SelectedParaleli.Paraleli}}
+
+
+<table>
+    <thead>
+        
+        <th>Dita</th>
+        <th>Ora</th>
+        <th>Dega</th>
+        <th>Lenda</th>
+        <th>VitiLenda</th>
+        <th>VitiStudent</th>
+        <th>Paraleli</th>
+        <th>Klasa1</th>
+        <th>Klasa2</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ore of OrariProvimeStudent">
+            
+            <td>{{ore.Dita}}</td>
+            <td>{{ore.Ora}}</td>
+            <td>{{ore.Dega}}</td>
+            <td>{{ore.Lenda}}</td>
+            <td>{{ore.VitiLenda}}</td>
+            <td>{{ore.VitiStudent}}</td>
+            <td>{{ore.Paraleli}}</td>
+            <td>{{ore.Klasa}}</td>
+            <td>{{ore.Klasa1}}</td>
+
+        </tr>
+    </tbody>
+</table>

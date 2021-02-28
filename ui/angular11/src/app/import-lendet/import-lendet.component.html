@@ -1,1 +1,46 @@
-<p>import-lendet works!</p>
+<input type="text" name="" id=""[(ngModel)]="Emer"><br>
+<input type="text" name="" id=""[(ngModel)]="Emer"><br>
+<select [(ngModel)]="SLenda">
+    <option *ngFor="let lend of Lenda" [ngValue]="lend">
+        {{lend.Lenda}}
+    </option>
+</select>
+<br>
+
+<select [(ngModel)]="SDega">
+    <option *ngFor="let deg of Dega" [ngValue]="deg">
+        {{deg.Dega}}
+    </option>
+</select>
+<br>
+
+<select [(ngModel)]="SVitiLenda">
+    <option *ngFor="let vlend of VitiLenda" [ngValue]="vlend">
+        {{vlend.VitiLenda}}
+    </option>
+</select>
+
+<br>
+<select [(ngModel)]="SVitiStudent">
+    <option *ngFor="let student of VitiStudent" [ngValue]="student">
+        {{student.VitiStudent}}
+    </option>
+</select>
+<br>
+<select [(ngModel)]="SParaleli">
+    <option *ngFor="let paralel of Paraleli" [ngValue]="paralel">
+        {{paralel.Paraleli}}
+    </option>
+</select>
+<br>
+<input type="text" name="" id=""[(ngModel)]="Emer"><br>
+<input type="checkbox" [(ngModel)]="Kapur">
+    Kapur
+<br>
+<input type="checkbox" [(ngModel)]="Paradiplomim"
+>Paradiplomim
+
+<button>Save</button>
+<button>Cancel</button>
+
+

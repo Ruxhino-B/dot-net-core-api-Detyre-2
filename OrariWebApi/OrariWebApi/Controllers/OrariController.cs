@@ -143,5 +143,48 @@ values
             return new JsonResult(table);
         }
 
+        [Route("VitiLenda")]
+        public JsonResult VitiLenda()
+        {
+            string query = @"
+                    select VitiLenda from Orari group by VitiLenda";
+            DataTable table = new DataTable();
+            string sqlDataSource = _configuration.GetConnectionString("OrariAppCon");
+            SqlDataReader myReader;
+            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
+            {
+                myCon.Open();
+                using (SqlCommand myCommand = new SqlCommand(query, myCon))
+                {
+                    myReader = myCommand.ExecuteReader();
+                    table.Load(myReader); ;
+                    myReader.Close();
+                    myCon.Close();
+                }
+            }
+            return new JsonResult(table);
+        }
+        [Route("Lenda")]
+        public JsonResult Lenda()
+        {
+            string query = @"
+                    select Lenda from Orari group by Lenda";
+            DataTable table = new DataTable();
+            string sqlDataSource = _configuration.GetConnectionString("OrariAppCon");
+            SqlDataReader myReader;
+            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
+            {
+                myCon.Open();
+                using (SqlCommand myCommand = new SqlCommand(query, myCon))
+                {
+                    myReader = myCommand.ExecuteReader();
+                    table.Load(myReader); ;
+                    myReader.Close();
+                    myCon.Close();
+                }
+            }
+            return new JsonResult(table);
+        }
+
     }
 }

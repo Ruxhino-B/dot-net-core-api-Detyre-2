@@ -12,7 +12,7 @@ const routes: Routes = [
   {path:'orari',component:OrariComponent},
   {path:'provimePedagog',component:ProvimePedagogComponent},
   {path:'provimeStudent',component:ProvimeStudentComponent},
-  {path:'createImportLendet',component:UpdateDisponibelComponent},
+  {path:'createImportLendet',component:ImportLendetComponent},
   {path:'shtoOrari',component:ShtoOrariComponent},
 ];
 

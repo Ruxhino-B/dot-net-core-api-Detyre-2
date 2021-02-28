@@ -22,7 +22,8 @@ namespace OrariWebApi.Controllers
 
         }
         [HttpGet]
-        public JsonResult Get(Orari ora)
+        /* public JsonResult Get(Orari ora)*/
+        public JsonResult Get()
         {
             string query = @"
                    select d.Dita,ore.Ora, Dega,Lenda,VitiLenda,VitiStudent,Paraleli,
@@ -30,10 +31,10 @@ namespace OrariWebApi.Controllers
                     inner join Ditet d on d.Id=o.Dita
                     inner join Oret ore on ore.Id=o.Ora
                     inner join Klasat k on k.id=o.Klasa1
-                    inner join Klasat k2 on k2.Id=o.Klasa2
-                    where Dega='" + ora.Dega + @"' and VitiStudent='" + ora.VitiStudent + @"' 
+                    inner join Klasat k2 on k2.Id=o.Klasa2";
+           /* where Dega='" + ora.Dega + @"' and VitiStudent='" + ora.VitiStudent + @"' 
                                 and Paraleli='" + ora.Paraleli + @"'
-                    order by Dita,Ora,VitiLenda,Lenda";
+                    order by Dita,Ora,VitiLenda,Lenda*/
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("OrariAppCon");
             SqlDataReader myReader;
@@ -55,7 +56,7 @@ namespace OrariWebApi.Controllers
         public JsonResult Dega()
         {
             string query = @"
-                    select Dega from Orari";
+                    select Dega from Orari group by Dega";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("OrariAppCon");
             SqlDataReader myReader;
