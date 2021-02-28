@@ -10,6 +10,7 @@ export class ImportLendetComponent implements OnInit {
 
   constructor(private service:SharedService) { }
 
+  form:any=[];
   Emer:string=""
   Mbiemer:string=""
   Lenda:any=[];
@@ -22,10 +23,10 @@ export class ImportLendetComponent implements OnInit {
   SVitiStudent:any=[];
   Paraleli:any=[];
   SParaleli:any=[];
-  NrStrudent:string=""
+  NrStrudent:any=[]
  
   Kapur:any=1;
-  Paradiplomim:string="";
+  Paradiplomim:any=0;
  
 
   ngOnInit(): void {
@@ -70,5 +71,29 @@ export class ImportLendetComponent implements OnInit {
       this.SVitiStudent=this.VitiStudent[0];
     });
   }
+  importLendet(){
+    var val = {
+      Emer:this.Emer,
+      Mbiemer:this.Mbiemer,
+      Lenda:this.SLenda.Lenda,
+      Dega:this.SDega.Dega,
+      VitiLenda:this.SVitiLenda.VitiLenda,
+      VitiStudent:this.SVitiStudent.VitiStudent,
+      Paraleli:this.SParaleli.Paraleli,
+      NrStrudent:this.NrStrudent,
+      Kapur:this.Kapur,
+      Paradiplomim:this.Paradiplomim,
+      };
+      this.service.addImportLendet(val).subscribe(res=>{
+        alert(res.toString());
+      });
+      this.clearInput();
+  }
 
+  clearInput(){
+    this.Emer="";
+    this.Mbiemer="";
+    this.NrStrudent="";
+  }
+  
 }

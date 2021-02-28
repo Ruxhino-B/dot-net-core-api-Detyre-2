@@ -65,6 +65,9 @@ export class SharedService {
   getLenda():Observable<any[]>{
     return this.http.get<any[]>(this.APIUrl+'/orari/Lenda');
   }
-
+  
+  addImportLendet(val:any){
+    return this.http.post(this.APIUrl+'/importlendet',val);
+  }
 
 }

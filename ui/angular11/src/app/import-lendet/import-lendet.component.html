@@ -1,10 +1,12 @@
+
 <input type="text" name="" id=""[(ngModel)]="Emer"><br>
-<input type="text" name="" id=""[(ngModel)]="Emer"><br>
+<input type="text" name="" id=""[(ngModel)]="Mbiemer"><br>
 <select [(ngModel)]="SLenda">
     <option *ngFor="let lend of Lenda" [ngValue]="lend">
         {{lend.Lenda}}
     </option>
 </select>
+{{SLenda.Lenda}}
 <br>
 
 <select [(ngModel)]="SDega">
@@ -33,14 +35,15 @@
     </option>
 </select>
 <br>
-<input type="text" name="" id=""[(ngModel)]="Emer"><br>
-<input type="checkbox" [(ngModel)]="Kapur">
+<input type="text"  [(ngModel)]="NrStrudent"><br>
+<input type="checkbox" value="1" [(ngModel)]="Kapur" checked>
     Kapur
-<br>
-<input type="checkbox" [(ngModel)]="Paradiplomim"
->Paradiplomim
+<br> {{Kapur}} <br>
+<input type="checkbox" value="aa" [(ngModel)]="Paradiplomim"
+disabled>Paradiplomim
+<br>{{Paradiplomim}}
 
-<button>Save</button>
-<button>Cancel</button>
+<button (click)="importLendet()">Save</button>
+<button (click)="clearInput()">Cancel</button>
 
 

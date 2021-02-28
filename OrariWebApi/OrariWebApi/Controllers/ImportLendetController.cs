@@ -25,17 +25,7 @@ namespace OrariWebApi.Controllers
         public JsonResult Get()
         {
             string query = @"
-                    SELECT [Emer]
-      ,[Mbiemer]
-      ,[Lenda]
-      ,[Dega]
-      ,[VitiLenda]
-      ,[VitiStudent]
-      ,[Paraleli]
-      ,[NrStudent]
-      ,[Kapur]
-      ,[Paradiplomim]
-  FROM [OrariProvimeve].[dbo].[ImportLendet]";
+                    select * from ImportLendet";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("OrariAppCon");
             SqlDataReader myReader;
