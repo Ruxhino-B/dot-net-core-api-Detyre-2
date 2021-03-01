@@ -27,12 +27,6 @@ export class ProvimeStudentComponent implements OnInit {
     this.getOrariProvimeStudent();
   }
 
-  
-
-  
-
-
-
   getOrariProvimeStudent(){
     this.service.getProvimeStudent().subscribe(data=>{
       this.OrariProvimeStudent=data;

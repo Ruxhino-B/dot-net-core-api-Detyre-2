@@ -1,1 +1,79 @@
-<h2>Shto orari eshte ok</h2>
+
+<input type="text" name="" id=""[(ngModel)]="Emer"><br>
+<input type="text" name="" id=""[(ngModel)]="Mbiemer"><br>
+<select [(ngModel)]="SLenda">
+    <option *ngFor="let lend of Lenda" [ngValue]="lend">
+        {{lend.Lenda}}
+    </option>
+</select>
+{{SLenda.Lenda}}
+<br>
+
+<select [(ngModel)]="SDega">
+    <option *ngFor="let deg of Dega" [ngValue]="deg">
+        {{deg.Dega}}
+    </option>
+</select>
+<br>
+
+<select [(ngModel)]="SVitiLenda">
+    <option *ngFor="let vlend of VitiLenda" [ngValue]="vlend">
+        {{vlend.VitiLenda}}
+    </option>
+</select>
+
+<br>
+<select [(ngModel)]="SVitiStudent">
+    <option *ngFor="let student of VitiStudent" [ngValue]="student">
+        {{student.VitiStudent}}
+    </option>
+</select>
+<br>
+<select [(ngModel)]="SParaleli">
+    <option *ngFor="let paralel of Paraleli" [ngValue]="paralel">
+        {{paralel.Paraleli}}
+    </option>
+</select>
+<br>
+<input type="text"  [(ngModel)]="NrStrudent">
+
+<select [(ngModel)]="SDita">
+    <option *ngFor="let dit of Dita" [ngValue]="dit">
+        {{dit.Dita}}
+    </option>
+</select>
+{{SDita.DitaId}}
+<br>
+
+<select [(ngModel)]="SOra">
+    <option *ngFor="let or of Ora" [ngValue]="or">
+        {{or.Ora}}
+    </option>
+</select>
+{{SDita.OraId}}
+<br>
+
+<select [(ngModel)]="SKlasa1">
+    <option *ngFor="let klas of Klasa1" [ngValue]="klas">
+        {{klas.Klasa}}
+    </option>
+</select>
+{{Sklasa1.KlasaId}}
+<br>
+
+<select [(ngModel)]="SKlasa2">
+    <option *ngFor="let klas of Klasa1" [ngValue]="klas">
+        {{klas.Klasa}}
+    </option>
+</select>
+{{Sklasa1.KlasaId}}
+<br>
+
+<input type="checkbox" value="aa" [(ngModel)]="Paradiplomim"
+disabled>Paradiplomim
+<br>{{Paradiplomim}}
+
+<button (click)="importLendet()">Save</button>
+<button (click)="clearInput()">Cancel</button>
+
+

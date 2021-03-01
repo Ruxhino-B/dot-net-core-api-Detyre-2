@@ -70,4 +70,8 @@ export class SharedService {
     return this.http.post(this.APIUrl+'/importlendet',val);
   }
 
+  getElShtoOrari():Observable<any[]>{
+    return this.http.get<any[]>(this.APIUrl+'/importlendet/getElShtoOrari');
+  }
+
 }
