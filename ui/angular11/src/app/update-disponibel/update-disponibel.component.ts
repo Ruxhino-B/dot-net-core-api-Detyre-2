@@ -18,7 +18,7 @@ export class UpdateDisponibelComponent implements OnInit {
   Klasa:any=[];
   SKlasa:any=[];
   Perdorur:boolean=false;
-  SPerdorur:any=[];
+  SPerdorur:number=0;
 
   ngOnInit(): void {
     this.loadElShtoOrari();
@@ -46,28 +46,29 @@ export class UpdateDisponibelComponent implements OnInit {
     });
   }
  
+  onChange(){
+    if (this.Perdorur == true)
+    {
+      return this.SPerdorur=1;
+    }
+    else
+    {
+      return this.SPerdorur=0;
+    }
+  };
 
   updateDisponibel(){
-   var val = { 
-        Dita:this.SDita.DitaId,
-        Ora:this.SOra.OraId,
-        Klasa:this.SKlasa.KlasaId,
+   var val = {         
+        OraId:this.SOra.OraId,
+        KlasaId:this.SKlasa.KlasaId,
         Perdorur:this.SPerdorur,
+        DitaId:this.SDita.DitaId
         };
         this.service.updateDisponibel(val).subscribe(res=>{
           alert(res.toString());
         });
   }
-  onChange(){
-      if (this.Perdorur == true)
-      {
-        this.SPerdorur=1;
-      }
-      else
-      {
-        this.SPerdorur=0;
-      }
-    };
+  
   
 
 }
