@@ -91,5 +91,30 @@ namespace OrariWebApi.Controllers
             return new JsonResult(table);
         }
 
+        [Route("getDisponibel")]
+        public JsonResult getDisponibel()
+        {
+            string query = @"
+                    select DitaId,d.Dita, OraId, ore.Ora, KlasaId, k.Klasa, Perdorur from Disponibel dis
+                        inner join Ditet d on dis.DitaId=d.Id
+                        inner JOIN Oret ore on dis.OraId = ore.Id
+                        inner Join Klasat k on dis.KlasaId=k.Id";
+            DataTable table = new DataTable();
+            string sqlDataSource = _configuration.GetConnectionString("OrariAppCon");
+            SqlDataReader myReader;
+            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
+            {
+                myCon.Open();
+                using (SqlCommand myCommand = new SqlCommand(query, myCon))
+                {
+                    myReader = myCommand.ExecuteReader();
+                    table.Load(myReader); ;
+                    myReader.Close();
+                    myCon.Close();
+                }
+            }
+            return new JsonResult(table);
+        }
+
     }
 }

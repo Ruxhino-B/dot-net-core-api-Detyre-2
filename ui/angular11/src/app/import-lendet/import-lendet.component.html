@@ -1,6 +1,6 @@
 
-<input type="text" name="" id=""[(ngModel)]="Emer"><br>
-<input type="text" name="" id=""[(ngModel)]="Mbiemer"><br>
+<input type="text" placeholder="Emer" name="" id=""[(ngModel)]="Emer"><br>
+<input type="text" placeholder="Mbiemer" name="" id=""[(ngModel)]="Mbiemer"><br>
 <select [(ngModel)]="SLenda">
     <option *ngFor="let lend of Lenda" [ngValue]="lend">
         {{lend.Lenda}}
@@ -35,7 +35,7 @@
     </option>
 </select>
 <br>
-<input type="text"  [(ngModel)]="NrStrudent"><br>
+<input type="text" placeholder="Nr Studentesh"  [(ngModel)]="NrStrudent"><br>
 <input type="checkbox" value="1" [(ngModel)]="Kapur" checked>
     Kapur
 <br> {{Kapur}} <br>

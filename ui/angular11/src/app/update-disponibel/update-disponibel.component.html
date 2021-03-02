@@ -1,1 +1,34 @@
-<p>update-disponibel works!</p>
+<select [(ngModel)]="SDita">
+    <option *ngFor="let dit of Dita" [ngValue]="dit">
+        {{dit.Dita}}
+    </option>
+</select>
+{{SDita.DitaId}}
+<br>
+
+<select [(ngModel)]="SOra">
+    <option *ngFor="let or of Ora" [ngValue]="or">
+        {{or.Ora}}
+    </option>
+</select>
+{{SOra.OraId}}
+<br>
+
+<select [(ngModel)]="SKlasa">
+    <option *ngFor="let klas of Klasa" [ngValue]="klas">
+        {{klas.Klasa}}
+    </option>
+</select>
+{{SKlasa.KlasaId}}
+<br>
+
+
+<input type="checkbox" [(ngModel)]="Perdorur" (change)="onChange()">Perdorur
+<br>{{Perdorur}}
+<br>{{SPerdorur}}
+
+
+<button (click)="updateDisponibel()">Save</button>
+<button >Cancel</button>
+
+

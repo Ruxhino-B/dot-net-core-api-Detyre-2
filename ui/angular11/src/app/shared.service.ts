@@ -27,7 +27,7 @@ export class SharedService {
   }
 
   updateDisponibel(val:any){
-    return this.http.put(this.APIUrl+'/orari',val);
+    return this.http.put(this.APIUrl+'/UpdateDisponibel',val);
   }
 
   getOnlyKlasa():Observable<any[]>{
@@ -73,5 +73,9 @@ export class SharedService {
   getElShtoOrari():Observable<any[]>{
     return this.http.get<any[]>(this.APIUrl+'/importlendet/getElShtoOrari');
   }
+  getDisponibel():Observable<any[]>{
+    return this.http.get<any[]>(this.APIUrl+'/UpdateDisponibel/getDisponibel');
+  }
+  
 
 }

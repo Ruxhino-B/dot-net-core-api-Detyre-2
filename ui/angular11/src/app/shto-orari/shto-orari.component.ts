@@ -22,7 +22,7 @@ export class ShtoOrariComponent implements OnInit {
   SVitiStudent:any=[];
   Paraleli:any=[];
   SParaleli:any=[];
-  NrStrudent:string=""
+  NrStrudent:any=[];
   Dita:any=[];
   SDita:any=[];
   Ora:any=[];
@@ -31,13 +31,20 @@ export class ShtoOrariComponent implements OnInit {
   SKlasa1:any=[];
   Klasa2:any=[];
   SKlasa2:any=[];
-  Paradiplomim:any=[];
+  Paradiplomim:any=0;
   SParadiplomim:any=[];
   ElShtoOrari:any=[];
   ElShtoOrariFull:any=[];
 
   ngOnInit(): void {
+    this.loadLenda();
+    this.loadDega();
+    this.loadVitiLenda();
+    this.loadVitiStudent();
+    this.loadParaleli();
+    this.loadElShtoOrari();
   }
+  
 
   loadLenda(){
     this.service.getLenda().subscribe(data=>      {
@@ -76,26 +83,49 @@ export class ShtoOrariComponent implements OnInit {
       this.service.getElShtoOrari().subscribe(data=>{
         this.ElShtoOrari=data;
         this.Dita = this.ElShtoOrari.filter(
-          (kot:any, i:any, arr:any) => arr.findIndex((t:any) 
-          => t.DitaId === kot.DitaId) === i);
-        );
+          (kot:any, i:any, arr:any) => arr.findIndex((t:any)  => t.DitaId === kot.DitaId) === i);
+        
         this.SDita = this.Dita[0];
 
         this.Ora = this.ElShtoOrari.filter(
-          (kot:any, i:any, arr:any) => arr.findIndex((t:any) 
-          => t.OraId=== kot.OraId) === i);
-        );
+          (kot:any, i:any, arr:any) => arr.findIndex((t:any) => t.OraId=== kot.OraId) === i);
+        
         this.SOra = this.Ora[0];
 
         this.Klasa1 = this.ElShtoOrari.filter(
-          (kot:any, i:any, arr:any) => arr.findIndex((t:any) 
-          => t.KlasaId === kot.KlasaId) === i);
-        );
+          (kot:any, i:any, arr:any) => arr.findIndex((t:any) => t.KlasaId === kot.KlasaId) === i);
+        
         this.SKlasa1 = this.Klasa1[0];
         this.SKlasa2 = this.Klasa1[2];
       });
     }
 
+    shtoOrari(){
+      var val = {
+        Emer:this.Emer,
+        Mbiemer:this.Mbiemer,
+        Lenda:this.SLenda.Lenda,
+        Dega:this.SDega.Dega,
+        VitiLenda:this.SVitiLenda.VitiLenda,
+        VitiStudent:this.SVitiStudent.VitiStudent,
+        Paraleli:this.SParaleli.Paraleli,
+        NrStrudent:this.NrStrudent,
+        Dita:this.SDita.DitaId,
+        Ora:this.SOra.OraId,
+        Klasa1:this.SKlasa1.KlasaId,
+        Klasa2:this.SKlasa2.KlasaId
+        //Paradiplomim:this.Paradiplomim
+        };
+        this.service.addOrari(val).subscribe(res=>{
+          alert(res.toString());
+        });
+        this.clearInput();
+    }
 
+    clearInput(){
+      this.Emer="";
+      this.Mbiemer="";
+      this.NrStrudent="";
+    }
 
 }

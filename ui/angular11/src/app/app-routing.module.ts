@@ -14,6 +14,7 @@ const routes: Routes = [
   {path:'provimeStudent',component:ProvimeStudentComponent},
   {path:'createImportLendet',component:ImportLendetComponent},
   {path:'shtoOrari',component:ShtoOrariComponent},
+  {path:'updateDisponibel', component:UpdateDisponibelComponent}
 ];
 
 @NgModule({

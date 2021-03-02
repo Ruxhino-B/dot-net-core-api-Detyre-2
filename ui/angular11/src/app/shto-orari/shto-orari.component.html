@@ -1,6 +1,6 @@
 
-<input type="text" name="" id=""[(ngModel)]="Emer"><br>
-<input type="text" name="" id=""[(ngModel)]="Mbiemer"><br>
+<input type="text" name="" placeholder="Emer" id=""[(ngModel)]="Emer"><br>
+<input type="text" name="" placeholder="Mbiemer" id=""[(ngModel)]="Mbiemer"><br>
 <select [(ngModel)]="SLenda">
     <option *ngFor="let lend of Lenda" [ngValue]="lend">
         {{lend.Lenda}}
@@ -14,6 +14,7 @@
         {{deg.Dega}}
     </option>
 </select>
+{{SDega.Dega}}
 <br>
 
 <select [(ngModel)]="SVitiLenda">
@@ -21,13 +22,14 @@
         {{vlend.VitiLenda}}
     </option>
 </select>
-
+{{SVitiLenda.VitiLenda}}
 <br>
 <select [(ngModel)]="SVitiStudent">
     <option *ngFor="let student of VitiStudent" [ngValue]="student">
         {{student.VitiStudent}}
     </option>
 </select>
+{{SVitiStudent.VitiStudent}}
 <br>
 <select [(ngModel)]="SParaleli">
     <option *ngFor="let paralel of Paraleli" [ngValue]="paralel">
@@ -35,8 +37,10 @@
     </option>
 </select>
 <br>
-<input type="text"  [(ngModel)]="NrStrudent">
-
+{{SParaleli.Paraleli}}
+<br>
+<input type="text" placeholder="Nr Studentesh" [(ngModel)]="NrStrudent">
+<br>
 <select [(ngModel)]="SDita">
     <option *ngFor="let dit of Dita" [ngValue]="dit">
         {{dit.Dita}}
@@ -50,7 +54,7 @@
         {{or.Ora}}
     </option>
 </select>
-{{SDita.OraId}}
+{{SOra.OraId}}
 <br>
 
 <select [(ngModel)]="SKlasa1">
@@ -58,7 +62,7 @@
         {{klas.Klasa}}
     </option>
 </select>
-{{Sklasa1.KlasaId}}
+{{SKlasa1.KlasaId}}
 <br>
 
 <select [(ngModel)]="SKlasa2">
@@ -66,14 +70,14 @@
         {{klas.Klasa}}
     </option>
 </select>
-{{Sklasa1.KlasaId}}
+{{SKlasa2.KlasaId}}
 <br>
 
-<input type="checkbox" value="aa" [(ngModel)]="Paradiplomim"
+<input type="checkbox" [(ngModel)]="Paradiplomim"
 disabled>Paradiplomim
 <br>{{Paradiplomim}}
 
-<button (click)="importLendet()">Save</button>
+<button (click)="shtoOrari()">Save</button>
 <button (click)="clearInput()">Cancel</button>
 
 
