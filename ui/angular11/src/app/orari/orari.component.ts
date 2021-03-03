@@ -69,6 +69,15 @@ FilterFn(){
     //   SelectedKlasa.toString().toLowerCase())
     });
 }
+sortResult(prop:any,asc:any){
+  this.Orari = this.Orari.sort(function(a:any,b:any){
+    if(asc){
+      return (a[prop]>b[prop])?1 : ((a[prop]<b[prop]) ?-1 :0);
+    }else{
+      return (b[prop]>a[prop])?1 : ((b[prop]<a[prop]) ?-1 :0);
+    }
+  });
+}
 
   
 

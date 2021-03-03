@@ -30,7 +30,7 @@ export class ProvimePedagogComponent implements OnInit {
     this.service.getOnlyPedagog().subscribe(data=>{
       console.log(data);
       this.EmerPetagog=data;
-      this.EmerSelektuar=this.EmerPetagog[9];
+      this.EmerSelektuar=this.EmerPetagog[10];
       
     });
   }
@@ -48,6 +48,16 @@ export class ProvimePedagogComponent implements OnInit {
         return el.Emer_Mbiemer.toString().toLowerCase().includes(
          EmerSelektuar.toString().toLowerCase()  )
       });
+  }
+
+  sortResult(prop:any,asc:any){
+    this.PedagogList = this.PedagogList.sort(function(a:any,b:any){
+      if(asc){
+        return (a[prop]>b[prop])?1 : ((a[prop]<b[prop]) ?-1 :0);
+      }else{
+        return (b[prop]>a[prop])?1 : ((b[prop]<a[prop]) ?-1 :0);
+      }
+    });
   }
 
 }

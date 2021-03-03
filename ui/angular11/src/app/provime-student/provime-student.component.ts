@@ -27,12 +27,6 @@ export class ProvimeStudentComponent implements OnInit {
     this.getOrariProvimeStudent();
   }
 
-  
-
-  
-
-
-
   getOrariProvimeStudent(){
     this.service.getProvimeStudent().subscribe(data=>{
       this.OrariProvimeStudent=data;
@@ -91,7 +85,7 @@ export class ProvimeStudentComponent implements OnInit {
       }else{
         return (b[prop]>a[prop])?1 : ((b[prop]<a[prop]) ?-1 :0);
       }
-    })
+    });
   }
  
 }

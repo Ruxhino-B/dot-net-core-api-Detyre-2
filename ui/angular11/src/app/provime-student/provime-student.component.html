@@ -20,18 +20,144 @@
 {{SelectedParaleli.Paraleli}}
 
 
-<table>
+<table table table-bordered>
     <thead>
         
-        <th>Dita</th>
-        <th>Ora</th>
-        <th>Dega</th>
-        <th>Lenda</th>
-        <th>VitiLenda</th>
-        <th>VitiStudent</th>
-        <th>Paraleli</th>
-        <th>Klasa1</th>
-        <th>Klasa2</th>
+        <th>
+            <div class="prove">
+                <button type="button" class="btn btn-light" id="btn1"
+                (click)="sortResult('Dita',true)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"/>
+                  </svg>
+            </button>
+            <button type="button" class="btn btn-light" 
+                (click)="sortResult('Dita',false)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-down-short" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"/>
+                  </svg>
+            </button>
+            </div>Dita</th>
+        <th>
+            <div class="prove">
+                <button type="button" class="btn btn-light" id="btn1"
+                (click)="sortResult('Ora',true)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"/>
+                  </svg>
+            </button>
+            <button type="button" class="btn btn-light" 
+                (click)="sortResult('Ora',false)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-down-short" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"/>
+                  </svg>
+            </button>
+            </div>Ora</th>
+        <th>
+            <div class="prove">
+                <button type="button" class="btn btn-light" id="btn1"
+                (click)="sortResult('Dega',true)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"/>
+                  </svg>
+            </button>
+            <button type="button" class="btn btn-light" 
+                (click)="sortResult('Dega',false)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-down-short" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"/>
+                  </svg>
+            </button>
+            </div>Dega</th>
+        <th>
+            <div class="prove">
+                <button type="button" class="btn btn-light" id="btn1"
+                (click)="sortResult('Lenda',true)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"/>
+                  </svg>
+            </button>
+            <button type="button" class="btn btn-light" 
+                (click)="sortResult('Lenda',false)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-down-short" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"/>
+                  </svg>
+            </button>
+            </div>Lenda</th>
+        <th>
+            <div class="prove">
+                <button type="button" class="btn btn-light" id="btn1"
+                (click)="sortResult('VitiLenda',true)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"/>
+                  </svg>
+            </button>
+            <button type="button" class="btn btn-light" 
+                (click)="sortResult('VitiLenda',false)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-down-short" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"/>
+                  </svg>
+            </button>
+            </div>VitiLenda</th>
+        <th>
+            <div class="prove">
+                <button type="button" class="btn btn-light" id="btn1"
+                (click)="sortResult('VitiStudent',true)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"/>
+                  </svg>
+            </button>
+            <button type="button" class="btn btn-light" 
+                (click)="sortResult('VitiStudent',false)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-down-short" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"/>
+                  </svg>
+            </button>
+            </div>VitiStudent</th>
+        <th>
+            <div class="prove">
+                <button type="button" class="btn btn-light" id="btn1"
+                (click)="sortResult('Paraleli',true)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"/>
+                  </svg>
+            </button>
+            <button type="button" class="btn btn-light" 
+                (click)="sortResult('Paraleli',false)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-down-short" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"/>
+                  </svg>
+            </button>
+            </div>Paraleli</th>
+        <th>
+            <div class="prove">
+                <button type="button" class="btn btn-light" id="btn1"
+                (click)="sortResult('Klasa',true)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"/>
+                  </svg>
+            </button>
+            <button type="button" class="btn btn-light" 
+                (click)="sortResult('Klasa',false)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-down-short" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"/>
+                  </svg>
+            </button>
+            </div>Klasa</th>
+        <th>
+            <div class="prove">
+                <button type="button" class="btn btn-light" id="btn1"
+                (click)="sortResult('Klasa1',true)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"/>
+                  </svg>
+            </button>
+            <button type="button" class="btn btn-light" 
+                (click)="sortResult('Klasa1',false)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-down-short" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"/>
+                  </svg>
+            </button>
+            </div>Klasa2</th>
     </thead>
     <tbody>
         <tr *ngFor="let ore of OrariProvimeStudent">
